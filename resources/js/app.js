@@ -94,7 +94,7 @@ updateStatus(order);
 
 //socket
 let socket = io()
-initAdmin(socket);
+
 //join
 if(order){
 
@@ -103,6 +103,7 @@ if(order){
 
 let adminAreaPath = window.location.pathname
 if(adminAreaPath.includes('admin')){
+    initAdmin(socket);
     socket.emit('join', 'adminRoom')
 }
 
